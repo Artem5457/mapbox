@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css' rel='stylesheet' />
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" type="text/css">
+
+  <div id='map' style="width: 400px; height: 300px;"></div>
+  <div id='naturalEarth' style="width: 800px; height: 700px;"></div>
+  <div id='geoLocation' style="width: 800px; height: 700px;"></div>
+  <div id='pointsOnMap' style="width: 800px; height: 700px; margin-top: 15px;"></div>
+
+  <script src='mapbox.js' defer></script>
+</body>
+
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Demo: Add points to a web map</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
+  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map"></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYXJ0ZW0xMjM0MzIiLCJhIjoiY2t5ZWU1YzIyMDIzNzJvcXJpeTdtZXd2YiJ9.MGVGFZ5eVrL5GN2pwaXm_g';
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/examples/cjgiiz9ck002j2ss5zur1vjji',
+      center: [-87.661557, 41.893748],
+      zoom: 10.7
+    });
+
+    map.on('click', (event) => {
+      const features = map.queryRenderedFeatures(event.point, {
+        layers: ['chicago-parks']
+      });
+      if (!features.length) {
+        return;
+      }
+      const feature = features[0];
+
+      const popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML(
+          `<h3>${feature.properties.title}</h3><p>${feature.properties.description}</p>`
+        )
+        .addTo(map);
+    });
+  </script>
+</body>
+
+</html> -->
